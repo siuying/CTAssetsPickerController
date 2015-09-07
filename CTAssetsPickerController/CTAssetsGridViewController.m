@@ -173,7 +173,7 @@ NSString * const CTAssetsGridViewFooterIdentifier = @"CTAssetsGridViewFooterIden
     self.navigationItem.rightBarButtonItem =
     [[UIBarButtonItem alloc] initWithTitle:CTAssetsPickerLocalizedString(@"Done", nil)
                                      style:UIBarButtonItemStyleDone
-                                    target:self.picker
+                                    target:self
                                     action:@selector(finishPickingAssets:)];
 }
 
@@ -187,8 +187,11 @@ NSString * const CTAssetsGridViewFooterIdentifier = @"CTAssetsGridViewFooterIden
     [self reloadData];
 }
 
+#pragma mark - Buttons
 
-
+-(void)finishPickingAssets:(id)sender {
+    [self.picker finishPickingAssets:sender];
+}
 
 #pragma mark - Collection view layout
 
